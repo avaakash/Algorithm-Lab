@@ -63,9 +63,9 @@ void reverseArray(int arr[], int start, int end)
 
 int main()
 {
-    int buffer[2] = {500000,1000000};
+    int buffer[10] = {1000,5000,10000,15000,20000,25000,50000,100000,500000,1000000};
     printf("Size\tAverage\t\tBest\t\tWorst\n");
-    for(int j=0;j<2;j++){
+    for(int j=0;j<10;j++){
         int arr[buffer[j]];
         int size = buffer[j];
         for (int i = 0; i < size; i++)
@@ -74,21 +74,21 @@ int main()
         }
         clock_t t;
         t = clock();
-        insertionSort(arr, size);
+        mergeSort(arr,0, size-1);
         t = clock() - t;
         double time_taken = ((double)t) / CLOCKS_PER_SEC;
 
         clock_t t2;
         t2 = clock();
-        insertionSort(arr, size);
+        mergeSort(arr,0, size-1);
         t2 = clock() - t2;
         double time_taken2 = ((double)t2) / CLOCKS_PER_SEC;
         reverseArray(arr, 0, size-1);
 
         clock_t t3;
         t3 = clock();
-        insertionSort(arr, size);
-        t3 = clock() - t2;
+        mergeSort(arr,0, size-1);
+        t3 = clock() - t3;
         double time_taken3 = ((double)t3) / CLOCKS_PER_SEC;
         
         printf("%d\t%f\t%f\t%f\n",size,time_taken,time_taken2,time_taken3);

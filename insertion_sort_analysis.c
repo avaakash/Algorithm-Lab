@@ -59,7 +59,7 @@ int main()
         clock_t t3;
         t3 = clock();
         insertionSort(arr, size);
-        t3 = clock() - t2;
+        t3 = clock() - t3;
         double time_taken3 = ((double)t3) / CLOCKS_PER_SEC;
         
         printf("%d\t%f\t%f\t%f\n",size,time_taken,time_taken2,time_taken3);
